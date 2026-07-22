@@ -1,0 +1,37 @@
+const error = document.getElementById(
+	`${fragmentElementId}-friendly-url-input-error`
+);
+const inputElement = document.getElementById(
+	`${fragmentElementId}-friendly-url-input`
+);
+
+function main() {
+	if (layoutMode === 'edit' && inputElement) {
+		inputElement.setAttribute('disabled', true);
+	}
+	else {
+		import('@liferay/fragment-impl/api').then(
+			({focusInput, registerLocalizedInput}) => {
+				if (error) {
+					focusInput(inputElement);
+				}
+
+				const {onChange} = registerLocalizedInput({
+					availableLanguageIds: input.attributes.availableLanguageIds,
+					defaultLanguageId: input.attributes.defaultLanguageId,
+					initialValues: input.valueI18n,
+					inputElement,
+					inputName: input.name,
+					localizationInputsContainer: inputElement.parentNode,
+					namespace: fragmentElementId,
+				});
+
+				inputElement.addEventListener('change', (event) => {
+					onChange(event.target.value);
+				});
+			}
+		);
+	}
+}
+
+main();

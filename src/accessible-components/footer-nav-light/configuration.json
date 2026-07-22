@@ -1,0 +1,17 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "Logo Image",
+					"label": "image-description",
+					"localizable": true,
+					"name": "imageDescription",
+					"type": "text"
+				}
+			],
+			"label": "accessibility"
+		}
+	]
+}

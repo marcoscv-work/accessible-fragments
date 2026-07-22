@@ -1,0 +1,82 @@
+const error = document.getElementById(
+	`${fragmentElementId}-numeric-input-error`
+);
+const numericInput = fragmentElement.querySelector(
+	`#${fragmentElementId}-numeric-input`
+);
+
+const isInteger = input.attributes.dataType === 'integer';
+
+function handleOnKeydown(event) {
+	if (
+		(isInteger && (event.key === ',' || event.key === '.')) ||
+		event.key === '+'
+	) {
+		event.preventDefault();
+	}
+}
+
+function handleOnKeyUp(event) {
+	if (!isInteger) {
+		event.target.setCustomValidity('');
+
+		if (event.target.checkValidity()) {
+			const numDecimals = input.attributes.step.length - 2;
+			const [, decimalPart = ''] = event.target.value.split(/[.,]/);
+
+			if (decimalPart.length > numDecimals) {
+				event.target.setCustomValidity(
+					numericInput.getAttribute('data-validation-message-text')
+				);
+			}
+		}
+	}
+}
+
+if (layoutMode === 'edit') {
+	numericInput.setAttribute('disabled', true);
+}
+else {
+	numericInput.addEventListener('keydown', handleOnKeydown);
+	numericInput.addEventListener('keyup', handleOnKeyUp);
+
+	const defaultLanguageId = input.attributes.defaultLanguageId;
+
+	import('@liferay/fragment-impl/api').then(
+		({focusInput, registerLocalizedInput, registerUnlocalizedInput}) => {
+			if (error) {
+				focusInput(numericInput);
+			}
+
+			if (input.localizable) {
+				const {onChange} = registerLocalizedInput({
+					availableLanguageIds: input.attributes.availableLanguageIds,
+					defaultLanguageId,
+					initialValues: input.valueI18n,
+					inputElement: numericInput,
+					inputName: input.name,
+					localizationInputsContainer: numericInput.parentNode,
+					namespace: fragmentElementId,
+				});
+
+				numericInput.addEventListener('change', (event) => {
+					onChange(event.target.value);
+				});
+			}
+			else {
+				registerUnlocalizedInput({
+					defaultLanguageId,
+					inputElement: numericInput,
+					readOnlyInputLabel: document.getElementById(
+						`${fragmentElementId}-numeric-read-only`
+					),
+					unlocalizedFieldsState:
+						input.attributes.unlocalizedFieldsState,
+					unlocalizedMessageContainer: document.getElementById(
+						`${fragmentElementId}-unlocalized-info`
+					),
+				});
+			}
+		}
+	);
+}
