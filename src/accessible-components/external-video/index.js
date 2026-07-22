@@ -37,6 +37,14 @@ function main() {
 			if (videoConfiguration.html) {
 				videoContainer.innerHTML = videoConfiguration.html;
 
+				if (configuration.videoTitle) {
+					const iframe = videoContainer.querySelector('iframe');
+
+					if (iframe) {
+						iframe.setAttribute('title', configuration.videoTitle);
+					}
+				}
+
 				requestAnimationFrame(showVideo);
 			}
 			else {

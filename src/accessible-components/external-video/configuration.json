@@ -44,6 +44,19 @@
 				}
 			],
 			"label": "external-video-options"
+		},
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "",
+					"label": "video-title",
+					"localizable": true,
+					"name": "videoTitle",
+					"type": "text"
+				}
+			],
+			"label": "accessibility"
 		}
 	]
 }

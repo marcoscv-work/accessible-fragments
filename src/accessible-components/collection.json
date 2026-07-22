@@ -1,4 +1,4 @@
 {
-	"description": "Accessible versions of Liferay's out-of-the-box fragments. Every fragment adds opt-in configuration for alternative text, ARIA labels, and semantic roles so authors can meet WCAG without touching code.",
+	"description": "A curated set of Liferay's out-of-the-box fragments, enhanced where it makes a real accessibility difference: configurable alternative text and ARIA labels, accessible names for media, landmark roles, and fixes for latent ARIA bugs. Fragments that Liferay already ships fully accessible are intentionally excluded, so every fragment here adds accessibility value over the original.",
 	"name": "Accessible Components"
 }

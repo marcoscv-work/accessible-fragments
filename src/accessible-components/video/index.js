@@ -81,6 +81,10 @@ const rawProvider = {
 		video.muted = configuration.mute;
 		video.playsInline = true;
 
+		if (configuration.videoTitle) {
+			video.setAttribute('aria-label', configuration.videoTitle);
+		}
+
 		video.style.height = '100%';
 		video.style.width = '100%';
 
@@ -123,6 +127,17 @@ const youtubeProvider = {
 					onReady: function () {
 						if (configuration.mute) {
 							player.mute();
+						}
+
+						if (configuration.videoTitle) {
+							const iframe = player.getIframe();
+
+							if (iframe) {
+								iframe.setAttribute(
+									'title',
+									configuration.videoTitle
+								);
+							}
 						}
 
 						showVideo();
