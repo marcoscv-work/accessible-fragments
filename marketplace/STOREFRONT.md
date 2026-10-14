@@ -10,7 +10,7 @@ Everything the Liferay Marketplace publishing wizard asks for, ready to copy and
 | Category | Fragments |
 | Areas | Content Management & Operations, Experience Management |
 | Tags (closed vocabulary) | Low Code |
-| Icon | `marketplace/icon-1024.png` (1024×1024 PNG, blue rounded square, three stacked fragments with the accessible one highlighted) |
+| Icon | `marketplace/icon-1024.png` (1024×1024 PNG): the Fragments icon (coral rounded square, card, two text lines) with the image placeholder replaced by the universal access pictogram, traced over the official symbol (`brand/universal-access.svg`) |
 
 ### Description (≤2000 characters, plain text, the storefront drops line breaks)
 

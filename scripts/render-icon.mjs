@@ -12,8 +12,10 @@ const {chromium} = require('playwright');
 
 const browser = await chromium.launch();
 const page = await browser.newPage({deviceScaleFactor: 1, viewport: {height: 1024, width: 1024}});
-const svg = fs.readFileSync(path.resolve('brand/logo-mark.svg'), 'utf8').replace('<svg ', '<svg width="1024" height="1024" ');
-await page.setContent(`<!doctype html><html><body style="margin:0;background:transparent">${svg}</body></html>`);
-await page.screenshot({omitBackground: true, path: path.resolve('marketplace/icon-1024.png')});
+for (const [source, target] of [['brand/logo-mark.svg', 'marketplace/icon-1024.png']]) {
+	const svg = fs.readFileSync(path.resolve(source), 'utf8').replace('<svg ', '<svg width="1024" height="1024" ');
+	await page.setContent(`<!doctype html><html><body style="margin:0;background:transparent">${svg}</body></html>`);
+	await page.screenshot({omitBackground: true, path: path.resolve(target)});
+}
 await browser.close();
 console.log('wrote marketplace/icon-1024.png');

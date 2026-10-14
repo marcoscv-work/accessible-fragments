@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Universal access pictogram, traced over the official symbol. -->
+  <circle cx="256" cy="256" r="233" fill="none" stroke="currentColor" stroke-width="38"/>
+  <circle cx="256" cy="122" r="38" fill="currentColor"/>
+  <path d="M128 176 Q256 216 384 176" fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round"/>
+  <path d="M212 196 L300 196 L296 300 L216 300 Z" fill="currentColor"/>
+  <path d="M236 290 L201 402" fill="none" stroke="currentColor" stroke-width="44" stroke-linecap="round"/>
+  <path d="M276 290 L311 402" fill="none" stroke="currentColor" stroke-width="44" stroke-linecap="round"/>
+</svg>
