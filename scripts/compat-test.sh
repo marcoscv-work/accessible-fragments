@@ -12,7 +12,7 @@ set -uo pipefail
 TAG="${1:?image tag, e.g. 2026.q3.6}"
 PORT="${2:-8081}"
 KEEP="${3:-}"
-NAME="accessible-components-${TAG//./-}"
+NAME="accessible-fragments-${TAG//./-}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LOG="${ROOT}/marketplace/compatibility.log"
 OUT="${ROOT}/marketplace/compat-${TAG}.txt"

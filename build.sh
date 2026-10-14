@@ -4,14 +4,16 @@
 # No dependencies beyond a POSIX shell and "zip".
 #
 # Usage: ./build.sh
-# Output: dist/accessible-components.zip
+# Output: dist/accessible-fragments.zip
 #
 set -euo pipefail
 
 cd "$(dirname "$0")"
 
+# The folder name is the collection key in Liferay. It stays accessible-components
+# so importing a new version overwrites the collection instead of duplicating it.
 collection="accessible-components"
-out="dist/${collection}.zip"
+out="dist/accessible-fragments.zip"
 
 mkdir -p dist
 rm -f "${out}"

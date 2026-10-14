@@ -30,11 +30,11 @@ All added fields sit under an **Accessibility** section in the fragment's config
 
 ## Install
 
-1. Download `dist/accessible-components.zip` from this repository (or from the latest [Release](https://github.com/marcoscv-work/accessible-fragments/releases)).
+1. Download `dist/accessible-fragments.zip` from this repository (or from the latest [Release](https://github.com/marcoscv-work/accessible-fragments/releases)).
 2. In Liferay, open **Site Builder and then Fragments** (or **Fragments** at a global scope).
 3. Click **Import**, choose the ZIP, and confirm.
 
-The collection **Accessible Components** appears in the fragment list and in the page editor sidebar, with the same thumbnails as the originals. The fragments keep their original names, so you will see two "Button" entries in the sidebar: the one under **Accessible Components** is this one.
+The collection **Accessible Fragments** appears in the fragment list and in the page editor sidebar, with the same thumbnails as the originals. The fragments keep their original names, so you will see two "Button" entries in the sidebar: the one under **Accessible Fragments** is this one.
 
 ## Use
 
@@ -48,7 +48,7 @@ The source of truth is `src/accessible-components/`. To regenerate the importabl
 ./build.sh
 ```
 
-This writes `dist/accessible-components.zip` and needs only a shell and `zip`.
+This writes `dist/accessible-fragments.zip` and needs only a shell and `zip`.
 
 You can also manage the collection with the [Liferay Fragments Toolkit](https://github.com/liferay/liferay-js-toolkit). From the repository root, push straight into a running Liferay instance without a manual import:
 
@@ -57,6 +57,8 @@ npx -p generator-liferay-fragments liferay-fragments import
 ```
 
 ## Layout
+
+The folder `src/accessible-components/` keeps its original name on purpose: Liferay uses it as the collection key, so importing a new version overwrites the collection instead of creating a second one.
 
 ```
 src/

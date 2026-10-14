@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Imports dist/accessible-components.zip into a running Liferay, creates a
+"""Imports dist/accessible-fragments.zip into a running Liferay, creates a
 content page with every fragment, and checks the rendered markup.
 
     LIFERAY_URL=http://localhost:8081 LIFERAY_AUTH=test@liferay.com:test \
@@ -20,9 +20,9 @@ import uuid
 BASE = os.environ.get('LIFERAY_URL', 'http://localhost:8080').rstrip('/')
 LOGIN, PASSWORD = os.environ.get('LIFERAY_AUTH', 'test@liferay.com:test').split(':', 1)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ZIP = os.path.join(ROOT, 'dist', 'accessible-components.zip')
+ZIP = os.path.join(ROOT, 'dist', 'accessible-fragments.zip')
 SRC = os.path.join(ROOT, 'src', 'accessible-components')
-PAGE_ERC = 'accessible-components-smoke'
+PAGE_ERC = 'accessible-fragments-smoke'
 
 jar = http.cookiejar.CookieJar()
 opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
@@ -177,7 +177,7 @@ def spec(erc, status, suffix, draft=None):
     return s
 
 page = {'externalReferenceCode': PAGE_ERC, 'friendlyUrlPath_i18n': {'en-US': '/' + PAGE_ERC},
-        'name_i18n': {'en-US': 'Accessible Components smoke'}, 'type': 'ContentPage',
+        'name_i18n': {'en-US': 'Accessible Fragments smoke'}, 'type': 'ContentPage',
         'pageSpecifications': [spec(PAGE_ERC, 'Approved', 'a', PAGE_ERC + '-draft'), spec(PAGE_ERC + '-draft', 'Draft', 'd')]}
 if os.environ.get('SMOKE_DUMP'):
     json.dump(page, open(os.environ['SMOKE_DUMP'], 'w'))

@@ -4,7 +4,7 @@
  *
  *   NODE_PATH=~/projects/liferay-portal/modules/node_modules \
  *   LIFERAY_URL=http://localhost:8080 LIFERAY_AUTH=test@liferay.com:test \
- *   SHOT_PAGE=/web/guest/accessible-components-test node scripts/storefront-shots.mjs [outDir]
+ *   SHOT_PAGE=/web/guest/accessible-fragments-test node scripts/storefront-shots.mjs [outDir]
  */
 import {createRequire} from 'node:module';
 import fs from 'node:fs';
@@ -15,7 +15,7 @@ const {chromium} = require('playwright');
 
 const base = process.env.LIFERAY_URL || 'http://localhost:8080';
 const [login, password] = (process.env.LIFERAY_AUTH || 'test@liferay.com:test').split(':');
-const testPage = process.env.SHOT_PAGE || '/web/guest/accessible-components-test';
+const testPage = process.env.SHOT_PAGE || '/web/guest/accessible-fragments-test';
 const out = process.argv[2] || 'marketplace/storefront';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 fs.mkdirSync(out, {recursive: true});
@@ -48,7 +48,7 @@ async function shot(name) {
 await page.goto(`${base}/group/guest/~/control_panel/manage?p_p_id=com_liferay_fragment_web_portlet_FragmentPortlet`);
 await page.waitForLoadState('networkidle');
 await sleep(2000);
-const collectionLink = page.locator('a:has-text("Accessible Components")').first();
+const collectionLink = page.locator('a:text-is("Accessible Fragments")').first();
 if (await collectionLink.count()) {
 	await collectionLink.click();
 	await page.waitForLoadState('networkidle');

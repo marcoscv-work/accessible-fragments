@@ -102,7 +102,7 @@ if ((await components.count()) && (await page.locator('.page-editor__sidebar__co
 	await components.click();
 	await sleep(1000);
 }
-const header = page.locator('.page-editor__sidebar__content button.panel-header').filter({hasText: /^Accessible Components$/}).first();
+const header = page.locator('.page-editor__sidebar__content button.panel-header').filter({hasText: /^Accessible Fragments$/}).first();
 report(await header.count() > 0, 'collection listed in the Components panel');
 if ((await header.getAttribute('aria-expanded')) === 'false') {
 	await header.click();

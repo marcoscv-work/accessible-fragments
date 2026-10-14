@@ -14,7 +14,7 @@ BASE = os.environ.get('LIFERAY_URL', 'http://localhost:8080').rstrip('/')
 AUTH = os.environ.get('LIFERAY_AUTH', 'test@liferay.com:test')
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'src', 'accessible-components')
-PAGE_ERC = os.environ.get('PAGE_ERC', 'accessible-components-test')
+PAGE_ERC = os.environ.get('PAGE_ERC', 'accessible-fragments-test')
 IMAGES = {k: os.environ.get(k, '') for k in ('SLIDE_1', 'SLIDE_2', 'SLIDE_3', 'CARD')}
 
 
@@ -62,7 +62,7 @@ FRAGMENTS = [
     ('card', {'headingLevel': select('h3')}, [
         image('01-img', IMAGES['CARD'], 'Abstract indigo artwork'), rich('02-title', 'Headings that follow the page'), rich('03-content', '<p>Pick the heading level of each card so screen reader users get one consistent outline, whatever the section it sits in.</p>'), link('04-link', 'Learn more', '/web/guest/home'),
     ]),
-    ('button', {'accessibleDescription': text('about the Accessible Components fragment set')}, [link('link', 'Read more', '/web/guest/home')]),
+    ('button', {'accessibleDescription': text('about the Accessible Fragments fragment set')}, [link('link', 'Read more', '/web/guest/home')]),
     ('video', {'url': text('/documents/sample.mp4'), 'videoTitle': text('Product tour'), 'captionsUrl': text('/documents/sample.vtt')}, []),
     ('cookie-banner-simple', {}, [rich('01-text', '<p>This site uses cookies to remember your preferences. <a href="/web/guest/home">Learn more</a>.</p>'), link('02-link', 'Accept', '')]),
 ]
@@ -88,10 +88,10 @@ def spec(erc, status, suffix, draft=None):
     return s
 
 
-page = {'externalReferenceCode': PAGE_ERC, 'friendlyUrlPath_i18n': {'en-US': '/accessible-components-demo'},
-        'name_i18n': {'en-US': 'Accessible Components demo'}, 'type': 'ContentPage',
+page = {'externalReferenceCode': PAGE_ERC, 'friendlyUrlPath_i18n': {'en-US': '/accessible-fragments-demo'},
+        'name_i18n': {'en-US': 'Accessible Fragments demo'}, 'type': 'ContentPage',
         'pageSpecifications': [spec(PAGE_ERC, 'Approved', 'a', PAGE_ERC + '-draft'), spec(PAGE_ERC + '-draft', 'Draft', 'd')]}
 api('/o/headless-admin-site/v1.0/sites/L_GUEST/site-pages/' + PAGE_ERC, method='DELETE')
 status, out = api('/o/headless-admin-site/v1.0/sites/L_GUEST/site-pages', data=json.dumps(page).encode(), method='POST')
 print('HTTP', status, '' if status == 200 else out[:400])
-print(f'{BASE}/web/guest/accessible-components-demo')
+print(f'{BASE}/web/guest/accessible-fragments-demo')
