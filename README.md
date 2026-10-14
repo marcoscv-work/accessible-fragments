@@ -73,7 +73,9 @@ src/
 
 ## Compatibility
 
-Built from the fragments shipped with Liferay DXP / Portal 7.4 and later. The fragments rely only on standard fragment features (editable elements, configuration fields, FreeMarker, and the `htmlUtil` and `languageUtil` helpers), so they import into any site on a compatible version. The `inert` attribute needs a browser from 2023 or later; older browsers simply ignore it.
+Built from the fragments shipped with Liferay DXP / Portal 7.4 and later. The fragments rely only on standard fragment features (editable elements, configuration fields, FreeMarker, and the `htmlUtil` and `languageUtil` helpers). The `inert` attribute needs a browser from 2023 or later; older browsers simply ignore it.
+
+Tested on the official Docker images of **2026.Q2** and **2026.Q3** (import, a page with every fragment, and 17 checks on the published markup) and on a master build. The scripts live in `scripts/`: `compat-test.sh <tag>` boots the image and runs `compat-smoke.py`, or `compat-editor.mjs` on releases whose page API cannot create pages with fragments. Results are kept in `marketplace/`.
 
 ## License
 

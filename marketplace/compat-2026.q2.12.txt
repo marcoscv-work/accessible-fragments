@@ -1,0 +1,22 @@
+PASS session login: authToken found, Guest groupId 20125
+PASS import 9 fragments: 9 ok ['Accordion', 'Banner Slider', 'Button', 'Card', 'Cookie Banner', 'Dropdown', 'External Video', 'Social', 'Video']; other: none
+PASS imported fragments resolvable: accordion, banner-slider, button, card, cookie-banner-simple, dropdown, external-video, social, video
+FAIL create test page: HTTP 400 {
+  "status" : "BAD_REQUEST",
+  "type" : "UnsupportedOperationException"
+}
+FAIL carousel container with label: 0 match(es)
+FAIL inactive slides inert: 0 match(es)
+FAIL slides named by title: 0 match(es)
+FAIL pause and play labels localized: 0 match(es)
+FAIL indicator labels and aria-current: 0 match(es)
+FAIL accordion region: 0 match(es)
+FAIL dropdown labelledby fixed: 0 match(es)
+PASS dropdown without aria-haspopup: 0 match(es)
+FAIL button accessible description: 0 match(es)
+FAIL card heading level: 0 match(es)
+FAIL cookie banner region: 0 match(es)
+PASS no empty title attributes: 0 match(es)
+PASS no FreeMarker errors: 0 match(es)
+
+6 of 17 checks passed; page http://127.0.0.1:8082/web/guest/accessible-components-smoke

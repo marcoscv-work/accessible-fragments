@@ -1,0 +1,20 @@
+PASS session login: authToken found, Guest groupId 20126
+PASS import 9 fragments: 9 ok ['Accordion', 'Banner Slider', 'Button', 'Card', 'Cookie Banner', 'Dropdown', 'External Video', 'Social', 'Video']; other: none
+PASS imported fragments resolvable: accordion, banner-slider, button, card, cookie-banner-simple, dropdown, external-video, social, video
+PASS create test page: HTTP 200
+PASS carousel container with label: 1 match(es)
+PASS inactive slides inert: 2 match(es)
+PASS slides named by title: 3 match(es)
+PASS pause and play labels localized: 1 match(es)
+PASS indicator labels and aria-current: 3 match(es)
+PASS accordion region: 1 match(es)
+PASS dropdown labelledby fixed: 2 match(es)
+PASS dropdown without aria-haspopup: 0 match(es)
+PASS button accessible description: 1 match(es)
+PASS card heading level: 1 match(es)
+PASS cookie banner region: 1 match(es)
+PASS no empty title attributes: 0 match(es)
+PASS no FreeMarker errors: 0 match(es)
+
+17 of 17 checks passed; page http://localhost:8081/web/guest/accessible-components-smoke
+---- server errors mentioning fragments

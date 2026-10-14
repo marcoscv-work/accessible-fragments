@@ -1,0 +1,25 @@
+PASS session login
+PASS create content page: draft opened in the editor
+  closing modal: Terms of Use - Loading Liferay Enterprise Search Use of Liferay Enterprise Searc
+PASS collection listed in the Components panel
+PASS fragments added from the collection: 9 of 9
+  on canvas before publish: ["Banner Slider","Accordion","Dropdown","Button","Card","Cookie Banner","Social","Video","External Video"]
+  after publish: http://127.0.0.1:8082/group/guest/~/control_panel/manage?p_p_id=com_liferay_layout_admin_web_portlet_GroupPagesPortlet&p_p_lifecycle=0&p_p_state=maximized&p_p_auth=FEXJHZCG
+PASS page published: plid 30 /ac-editor-1791969721009
+  published page HTTP 200 fragments 9
+PASS carousel container: 1 match(es)
+PASS inactive slides inert: 2 match(es)
+PASS slides named by title: 3 match(es)
+PASS pause and play labels localized: 1 match(es)
+PASS indicator labels and aria-current: 3 match(es)
+PASS accordion region: 1 match(es)
+PASS dropdown labelledby fixed: 1 match(es)
+PASS dropdown without aria-haspopup: 0 match(es)
+PASS card default heading level: 1 match(es)
+PASS cookie banner region: 1 match(es)
+PASS social without empty titles: 0 match(es)
+PASS no FreeMarker errors: 0 match(es)
+
+17 of 17 checks passed; page http://127.0.0.1:8082/web/guest/ac-editor-1791969721009
+test page deleted: 200
+---- server errors mentioning fragments

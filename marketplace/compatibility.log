@@ -1,0 +1,2 @@
+2026.q3.6 2026-10-14 PASS 17 markup checks; slider pause, inert, dropdown keyboard and Escape, captions track verified in the browser
+2026.q2.12 2026-10-14 PASS import 9/9 (compat-smoke.py, its page step cannot run: the site-pages API does not create pages with fragments on this release); render through the page editor 17 checks (compat-editor.mjs)
