@@ -34,6 +34,12 @@
 	}
 }
 
+.section-slider {
+	--footer-gap: 8px;
+	--item-button-height: 3px;
+	--toggle-button-width: 24px;
+}
+
 .section-slider .carousel {
 	position: relative;
 }
@@ -82,34 +88,73 @@
 	animation-name: moveRight;
 }
 
-.section-slider .carousel-navigation {
+.c-prefers-reduced-motion .section-slider .carousel-item {
+	animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.section-slider .carousel-item {
+		animation: none;
+	}
+}
+
+.section-slider .carousel-footer {
+	align-items: center;
 	bottom: 10px;
 	display: flex;
+	gap: var(--footer-gap);
 	justify-content: center;
 	left: 0;
-	list-style: none;
 	padding-left: 0;
 	position: absolute;
 	right: 0;
 	z-index: 15;
 }
 
-.section-slider .carousel-navigation button {
-	background-color: rgba(255, 255, 255, 0.5);
-	border: 0;
-	flex: 0 1 auto;
-	height: 3px;
-	margin-left: 3px;
-	margin-right: 3px;
-	position: relative;
-	width: 30px;
+.section-slider .carousel-navigation {
+	display: flex;
+	gap: var(--footer-gap);
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-.section-slider .carousel-navigation button:focus {
-	outline: 0;
+.section-slider .carousel-item-button {
+	background: transparent;
+	border: 0;
+	display: block;
+	padding: calc((var(--toggle-button-width) - var(--item-button-height)) / 2)
+		0;
 	text-decoration: none;
 }
 
-.section-slider .carousel-navigation button.active {
+.section-slider .carousel-item-button:focus-visible,
+.section-slider .carousel-toggle-button:focus-visible {
+	border-radius: 4px;
+	box-shadow:
+		0 0 0 2px #fff,
+		0 0 0 4px #528eff;
+	outline: none;
+}
+
+.section-slider .carousel-item-button-icon {
+	background-color: rgba(255, 255, 255, 0.5);
+	display: block;
+	height: var(--item-button-height);
+	width: 30px;
+}
+
+.section-slider .carousel-item-button.active .carousel-item-button-icon {
 	background-color: rgba(255, 255, 255, 1);
+}
+
+.section-slider .carousel-toggle-button {
+	aspect-ratio: 1 / 1;
+	background: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 1);
+	display: block;
+	height: var(--toggle-button-width);
+	width: var(--toggle-button-width);
 }

@@ -1,33 +1,3 @@
 {
-	"fieldSets": [
-		{
-			"fields": [
-				{
-					"dataType": "string",
-					"defaultValue": "",
-					"label": "image-description",
-					"localizable": true,
-					"name": "imageDescription1",
-					"type": "text"
-				},
-				{
-					"dataType": "string",
-					"defaultValue": "",
-					"label": "image-description",
-					"localizable": true,
-					"name": "imageDescription2",
-					"type": "text"
-				},
-				{
-					"dataType": "string",
-					"defaultValue": "",
-					"label": "image-description",
-					"localizable": true,
-					"name": "imageDescription3",
-					"type": "text"
-				}
-			],
-			"label": "accessibility"
-		}
-	]
+	"fieldSets": []
 }

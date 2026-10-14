@@ -146,6 +146,29 @@ function handleDropdownLeave() {
 	}
 }
 
+function handleFocusOut(event) {
+	if (isShown() && !fragmentElement.contains(event.relatedTarget)) {
+		toggleMenu();
+	}
+}
+
+function handleKeyDown(event) {
+	if (event.key === 'Escape' && isShown()) {
+		toggleMenu();
+
+		toggle.focus();
+	}
+}
+
+function handleToggleOpen(event) {
+	if (
+		(!toggleEditable.contains(event.target) || !editMode) &&
+		!isShown()
+	) {
+		toggleMenu();
+	}
+}
+
 function handleWindowEvent() {
 	if (!toggle.isConnected) {
 		window.removeEventListener('resize', handleWindowEvent);
@@ -167,10 +190,19 @@ function main() {
 
 		menu.addEventListener('mouseenter', handleDropdownHover);
 		menu.addEventListener('mouseleave', handleDropdownLeave);
+
+		// Hover alone leaves keyboard and touch users without a way in
+
+		toggle.addEventListener('click', handleToggleOpen);
+		fragmentElement.addEventListener('focusout', handleFocusOut);
 	}
 	else {
 		toggle.addEventListener('click', handleToggleClick);
 		document.body.addEventListener('click', handleBodyClick);
+	}
+
+	if (!(configuration.keepOpen && editMode)) {
+		fragmentElement.addEventListener('keydown', handleKeyDown);
 	}
 }
 

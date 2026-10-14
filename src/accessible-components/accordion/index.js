@@ -1,6 +1,15 @@
 const button = fragmentElement.querySelector('.panel-header');
 const panel = fragmentElement.querySelector('.panel-collapse');
 
+function setPanelHidden(hidden) {
+	if (hidden) {
+		panel.setAttribute('inert', '');
+	}
+	else {
+		panel.removeAttribute('inert');
+	}
+}
+
 function main() {
 	if (layoutMode !== 'edit') {
 		panel.style.maxHeight = 'fit-content';
@@ -13,6 +22,8 @@ function main() {
 			const isExpanded = !button.classList.contains('collapsed');
 
 			button.setAttribute('aria-expanded', isExpanded);
+
+			setPanelHidden(!isExpanded);
 
 			if (isExpanded) {
 				panel.style.maxHeight = panel.scrollHeight + 'px';

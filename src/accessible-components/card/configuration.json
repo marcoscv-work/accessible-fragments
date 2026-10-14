@@ -28,11 +28,30 @@
 			"fields": [
 				{
 					"dataType": "string",
-					"defaultValue": "",
-					"label": "image-description",
-					"localizable": true,
-					"name": "imageDescription",
-					"type": "text"
+					"defaultValue": "h2",
+					"description": "Pick the level that follows the heading before the card, so screen reader users get a consistent outline.",
+					"label": "heading-level",
+					"name": "headingLevel",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"value": "h2"
+							},
+							{
+								"value": "h3"
+							},
+							{
+								"value": "h4"
+							},
+							{
+								"value": "h5"
+							},
+							{
+								"value": "h6"
+							}
+						]
+					}
 				}
 			],
 			"label": "accessibility"

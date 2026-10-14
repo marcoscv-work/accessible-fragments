@@ -16,6 +16,19 @@
 					}
 				}
 			]
+		},
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "",
+					"label": "aria-label",
+					"localizable": true,
+					"name": "ariaLabel",
+					"type": "text"
+				}
+			],
+			"label": "accessibility"
 		}
 	]
 }

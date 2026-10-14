@@ -85,6 +85,19 @@ const rawProvider = {
 			video.setAttribute('aria-label', configuration.videoTitle);
 		}
 
+		if (configuration.captionsUrl) {
+			const track = document.createElement('track');
+
+			track.default = true;
+			track.kind = 'captions';
+			track.src = configuration.captionsUrl;
+			track.srclang = (
+				Liferay.ThemeDisplay.getLanguageId() || 'en'
+			).replace('_', '-');
+
+			video.appendChild(track);
+		}
+
 		video.style.height = '100%';
 		video.style.width = '100%';
 

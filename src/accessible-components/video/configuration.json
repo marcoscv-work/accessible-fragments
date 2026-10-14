@@ -12,7 +12,8 @@
 					"defaultValue": false,
 					"label": "autoplay",
 					"name": "autoPlay",
-					"type": "checkbox"
+					"type": "checkbox",
+					"description": "Video that starts with sound fails WCAG 1.4.2 Audio Control. Keep Mute on when you enable this."
 				},
 				{
 					"defaultValue": false,
@@ -30,7 +31,8 @@
 					"defaultValue": false,
 					"label": "hide-controls",
 					"name": "hideControls",
-					"type": "checkbox"
+					"type": "checkbox",
+					"description": "Without controls there is no keyboard way to pause the video (WCAG 2.1.1). Avoid it for videos longer than five seconds."
 				},
 				{
 					"defaultValue": "",
@@ -78,6 +80,15 @@
 					"label": "video-title",
 					"localizable": true,
 					"name": "videoTitle",
+					"type": "text"
+				},
+				{
+					"dataType": "string",
+					"defaultValue": "",
+					"description": "URL of a WebVTT (.vtt) captions file for the video file. It is added as a captions track in the current language (WCAG 1.2.2).",
+					"label": "Captions URL",
+					"localizable": true,
+					"name": "captionsUrl",
 					"type": "text"
 				}
 			],

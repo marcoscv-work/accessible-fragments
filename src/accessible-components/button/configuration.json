@@ -76,9 +76,10 @@
 				{
 					"dataType": "string",
 					"defaultValue": "",
-					"label": "aria-label",
+					"description": "Read by screen readers after the visible text. It adds context (for example, what a Read More link opens) without replacing the name people see and say.",
+					"label": "description",
 					"localizable": true,
-					"name": "ariaLabel",
+					"name": "accessibleDescription",
 					"type": "text"
 				}
 			],
