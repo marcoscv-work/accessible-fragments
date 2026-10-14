@@ -16,13 +16,13 @@ Everything the Liferay Marketplace publishing wizard asks for, ready to copy and
 
 Accessible Components is a small set of Liferay's own page fragments, republished where the stock version has an accessibility gap the product does not cover yet. Import the ZIP in Site Builder, Fragments, and the collection appears next to the default ones with the same names and thumbnails. Banner Slider gains a pause and play control, stops while hovered or focused, does not start under reduced motion, hides inactive slides from assistive technology, and gives every indicator a visible focus ring, a 24 px target and a localized label. Accordion keeps its collapsed content out of the tab order and exposes the panel as a labelled region. Dropdown opens by keyboard even in display-on-hover mode, closes with Escape, and no longer announces a menu that is not there. Button gets an Accessible Description read after the visible label, which adds context to a Read More without breaking Label in Name. Card gets a heading level selector. Video gets a title and a captions track in the visitor language, and its Autoplay and Hide Controls options explain their accessibility cost. External Video gets a title on the embedded player, Cookie Banner becomes a labelled landmark, and Social drops its empty title attributes. Every added field sits in an Accessibility section of the fragment configuration, is optional and localizable, and leaves the fragment behaving like the original until an author fills it in. Image alternative text is intentionally not duplicated: the page editor already provides an Image Description for every image. The set shrinks as Liferay absorbs each fix; the Accordion aria-controls fix, for example, already landed in master. It is the companion of Accessibility Scanner for Liferay, which detects the issues these fragments fix. Requirements: Liferay DXP 2026.Q2 or 2026.Q3, a 2023 or later browser for the inert attribute. Source, issues and documentation: https://github.com/marcoscv-work/accessible-fragments
 
-(1807 characters)
+(1948 characters)
 
 ## Build
 
 | Field | Value |
 |---|---|
-| App type | Other, "Via Liferay Plugin Packages" |
+| App type | Low-Code Configuration, "Via Liferay Plugin Packages" (its description names fragments explicitly) |
 | Package | `dist/accessible-components.zip` from `./build.sh`: the fragment collection in Liferay import format (collection.json, nine fragment folders with fragment.json, index.html, index.css, index.js, configuration.json, thumbnail.png) |
 | Install | Site Builder, Fragments, Import. Not a deployable module: nothing goes into the deploy folder |
 | Compatible versions | Only the rows marked green in the compatibility matrix below |
